@@ -1,0 +1,1 @@
+﻿navigator.serviceWorker.register('wwwroot/service-worker.js');
