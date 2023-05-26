@@ -1,21 +1,22 @@
 {
-  "name": "ChromeExtensionBlazorDemo",
-  "short_name": "ChromeExtensionBlazorDemo",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#03173d",
-  "prefer_related_applications": false,
-  "icons": [
+  "manifest_version": 3,
+  "name": "My Blazor Extension",
+  "description": "My browser extension built with Blazor WebAssembly",
+  "version": "0.1",
+  "background": {
+    "service_worker": "BackgroundWorker.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "web_accessible_resources": [
     {
-      "src": "icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "resources": [
+        "framework/*",
+        "content/*"
+      ],
+      "matches": [ "<all_urls>" ]
     }
   ]
 }
